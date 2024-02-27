@@ -1,0 +1,55 @@
+<div class="bootstrap-wrapper">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<mat-card>
+<mat-card-header>
+<!-- Heading -->
+<mat-card-title>
+Read This Instructions Carefully
+</mat-card-title>
+<mat-card-subtitle>
+Please Carefully read this Instructions DO's and Don't
+</mat-card-subtitle>
+</mat-card-header>
+
+<mat-card-content class="con">
+<!-- content -->
+<h1>{{quizzes.title}}</h1>
+<p>{{quizzes.description}}</p>
+
+<mat-divider></mat-divider>
+<br>
+<h1>Important Instructions</h1>
+<ul>
+<li>This quiz is only for pratice purpose.</li>
+<li>You have to submit quiz with in <b>{{quizzes.noOfQuestions*2}} Minutes.</b></li>
+<li>You can Attempt this quiz at any time,But Durtion is <b>{{quizzes.noOfQuestions*2}} Minutes</b> only.</li>
+<li>There are <b>{{quizzes.noOfQuestions}} questions</b> in this quiz.</li>
+<li>Each question carries <b>{{quizzes.maxMarks/quizzes.noOfQuestions}}</b> marks. No negative marking for wrong answers</li>
+<li>All questions are mcq's</li>
+</ul>
+
+<mat-divider></mat-divider>
+<br/>
+<h1>Attempting Quiz</h1>
+<ul>
+<li>Click <b>Start Test</b> button to start the quiz.</li>
+<li>The time will start the moment you click the start test button.</li>
+<li>you can not resume this quiz,if any interrupted due to any reason.</li>
+<li>Scroll Down to move to next question.</li>
+<li>Click on submit Quiz button on completition of the quiz.</li>
+<li>Report of the test is atomatically generated in the form of PDF copy.</li>
+</ul>
+</mat-card-content>
+
+<mat-card-actions class="text-center">
+<!-- actions -->
+<button mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+</mat-card-actions>
+
+</mat-card>
+</div>
+</div>
+</div>
+</div>

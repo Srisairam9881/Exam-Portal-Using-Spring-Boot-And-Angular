@@ -1,0 +1,46 @@
+<mat-card>
+<h1>Add New Quiz</h1>
+<div class="container">
+<div class="row">
+<div class="col-md-8 offset-md-1">
+<form (ngSubmit)="addQuiz()">
+
+<div class="form-floating mb-3">
+<input type="text" class="form-control" [(ngModel)]="quizData.title" name="title" id="title" placeholder="Enter title" required>
+<label for="title">Title</label>
+</div>
+
+<div class="form-floating mb-3">
+<textarea type="text" class="form-control" [(ngModel)]="quizData.description" name="description" id="description" placeholder="Enter description" required style="height: 170px;"></textarea>
+<label for="description">Description</label>
+</div>
+<div class="row">
+<div class="form-floating col-6">
+<input type="number" class="form-control" [(ngModel)]="quizData.maxMarks" name="maxMarks" id="maxMarks" placeholder="Enter description" required>
+<label for="maxMarks" style="margin-left: 15px;">Maximum Marks</label>
+</div>
+
+<div class="form-floating col-6">
+<input type="number" class="form-control" [(ngModel)]="quizData.noOfQuestions" name="noOfQuestions" id="noOfQuestions" placeholder="Enter no.of Questions" required>
+<label for="noOfQuestions" style="margin-left: 15px;">Number of Questions</label>
+</div>
+
+<div class="pub">
+<mat-slide-toggle [(ngModel)]="quizData.active" name="active" required>Publish Status</mat-slide-toggle>
+</div>
+
+<div class="form-floating col-12" style="margin-top: 20px;">
+<select class="form-select form-select" [(ngModel)]="quizData.category.cid" name="category" aria-label=".form-select-lg example" required>
+<option *ngFor="let c of categories" [value]="c['cid']">{{c ['title']}}</option>
+</select>
+<label for="category" style="margin-left: 15px;">Categories</label>
+</div>
+
+</div>
+<button mat-raised-button color="primary" class="btn">Add Quiz</button>
+
+</form>
+</div>
+</div>
+</div>
+</mat-card>

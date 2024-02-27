@@ -1,0 +1,59 @@
+<div class="bootstrap-wrapper">
+<div class="row">
+<div class="col-md-12">
+<h1 class="head">Add Question to <span style="font-weight: bolder;">{{qTitle}}</span></h1>
+<mat-card>
+<mat-card-header>
+<mat-card-subtitle>Enter Details Of New Question</mat-card-subtitle>
+<mat-card-content>
+<form (ngSubmit)="formSubmit()">
+
+<div class="form-floating mb-3" style="margin-top: 50px;">
+<textarea type="text" class="form-control c" [(ngModel)]="question.content" name="content" id="content" placeholder="Enter Question" required></textarea>
+<label for="content">Content</label>
+</div>
+
+
+<div class="row" style="margin-top: 20px;">
+<div class="form-floating col-6">
+<input type="text" class="form-control" [(ngModel)]="question.option1" name="option1" id="option1" placeholder="Enter option1" required>
+<label for="option1" style="margin-left: 15px;">Option 1</label>
+</div>
+
+<div class="form-floating col-6">
+<input type="text" class="form-control" [(ngModel)]="question.option2" name="option2" id="option2" placeholder="Enter option2" required>
+<label for="option2" style="margin-left: 15px;">Option 2</label>
+</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+<div class="form-floating col-6">
+<input type="text" class="form-control" [(ngModel)]="question.option3" name="option3" id="option3" placeholder="Enter option3">
+<label for="option3" style="margin-left: 15px;">Option 3</label>
+</div>
+
+<div class="form-floating col-6">
+<input type="text" class="form-control" [(ngModel)]="question.option4" name="option4" id="option4" placeholder="Enter option4">
+<label for="option4" style="margin-left: 15px;">Option 4</label>
+</div>
+
+<div class="form-floating col-12" style="margin-top: 20px;">
+<select class="form-select form-select"  name="answer" aria-label=".form-select-lg example" required [(ngModel)]="question.answer" name="answer">
+<option *ngIf="question.option1" [value]="question.option1">{{question.option1}}</option>
+<option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</option>
+<option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</option>
+<option *ngIf="question.option4" [value]="question.option4">{{question.option4}}</option>
+</select>
+<label for="answer" style="margin-left: 15px;">Answer</label>
+</div>
+</div>
+
+<button mat-raised-button color="primary" style="margin-top:40px; margin-left: 200px; width: 120px;">Add Question</button>
+
+</form>
+</mat-card-content>
+</mat-card-header>
+</mat-card>
+</div>
+</div>
+</div>

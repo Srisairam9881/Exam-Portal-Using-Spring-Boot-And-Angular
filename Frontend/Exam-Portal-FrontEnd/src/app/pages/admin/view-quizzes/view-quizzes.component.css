@@ -1,0 +1,23 @@
+.mat-card
+{
+margin-top: 10px;
+}
+.example-header-image {
+background-image: url('../../../../assets/quiz.png');
+background-size: cover;
+}
+
+.atem
+{
+margin-left: 8px;
+margin-top: 6px;
+}
+.que
+{
+margin-left: 3px;
+}
+.del
+{
+margin-left: 8px;
+margin-top: 6px;
+}

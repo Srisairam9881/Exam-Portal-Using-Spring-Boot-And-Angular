@@ -1,0 +1,59 @@
+<div class="bootstrap-wrapper">
+<div class="container">
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<div class="container text-center">
+<img src="../../../assets/register.png" alt="" width="100px">
+</div>
+<h3 class="text-center">Register Here</h3>
+
+
+<form class="row g-3 " (ngSubmit)="formSubmit()">
+
+<div class="col-md-6">
+<label for="username" class="form-label">UserName*</label>
+<input type="text" [(ngModel)]="user.username" name="username" class="form-control" id="username" placeholder="Enter Username" required>
+</div>
+
+<div class="col-md-6">
+<label for="password" class="form-label">Password*</label>
+<input type="password" [(ngModel)]="user.password" name="password" class="form-control" id="password" placeholder="Enter password" required>
+</div>
+
+<div class="col-md-6">
+<label for="firstName" class="form-label">First Name*</label>
+<input type="text" [(ngModel)]="user.firstName" name="firstName" class="form-control" id="firstName" placeholder="Enter firstName" required>
+</div>
+
+<div class="col-md-6">
+<label for="lastName" class="form-label">Last Name*</label>
+<input type="text" [(ngModel)]="user.lastName" name="lastName" class="form-control" id="lastName" placeholder="Enter lastName" required>
+</div>
+
+<div class="col-md-6">
+<label for="email" class="form-label">Email*</label>
+<input type="text" [(ngModel)]="user.email" name="email" class="form-control" id="email" placeholder="Enter email id" required>
+</div>
+
+<div class="col-md-6">
+<label for="phoneNo" class="form-label">Phone Number*</label>
+<input type="number" [(ngModel)]="user.phoneNo" name="phoneNo" class="form-control" id="phoneNo" placeholder="Enter phone number" required>
+</div>
+
+<!--<div class="col-md-6">
+<label for="profile" class="form-label">Profile Pic</label>
+<input type="file" class="form-control" id="profile">
+</div>-->
+
+<div class="col-12" style="margin-left: 27vh; margin-top: 37px;">
+<div class="col-md-6">
+<button type="submit" class="btn btn-primary" style="width: 90px;">Sign Up</button>
+<button type="reset" class="btn btn-warning" style="width: 90px; margin-left: 7px;">Clear</button>
+</div>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+</div>
