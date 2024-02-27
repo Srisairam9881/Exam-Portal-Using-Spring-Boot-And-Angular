@@ -35,9 +35,9 @@ import { PrequizComponent } from './pages/user/prequiz/prequiz.component';
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
-import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { AllAdminsComponent } from './pages/admin/all-admins/all-admins.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AllUsersComponent } from './pages/admin/all-users/all-users.component';
 
 @NgModule({
   declarations: [

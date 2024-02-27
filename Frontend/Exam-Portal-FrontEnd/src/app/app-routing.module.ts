@@ -4,13 +4,13 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { AllAdminsComponent } from './pages/admin/all-admins/all-admins.component';
+import { AllUsersComponent } from './pages/admin/all-users/all-users.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
-import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
