@@ -1,0 +1,50 @@
+.mat-card
+{
+margin-top: 10px;
+}
+.head
+{
+text-align: center;
+}
+.custom-table {
+background-color: #f0f0f0; /* Set your desired background color */
+}
+.custom-table {
+background-color: #f0f0f0; /* Set your desired background color */
+}
+
+.custom-table mat-cell {
+border: none; /* Remove borders from cells */
+padding: 8px 16px; /* Adjust padding as needed */
+}
+
+.custom-table mat-header-row {
+background-color: #ccc; /* Set header row background color */
+}
+
+.custom-table mat-row:nth-child(even) {
+background-color: #e0e0e0; /* Set even row background color */
+}
+.custom-table mat-cell, .custom-table mat-header-cell {
+border-right: 1px solid #ccc; /* Add right border to cells */
+}
+
+.custom-table mat-header-cell:first-child, .custom-table mat-cell:first-child {
+border-left: 1px solid #ccc; /* Add left border to first cell */
+}
+
+.custom-table mat-header-row, .custom-table mat-row {
+border-bottom: 1px solid #ccc; /* Add bottom border to header and data rows */
+}
+
+.custom-table mat-header-row:first-child, .custom-table mat-row:first-child {
+border-top: 1px solid #ccc; /* Add top border to first header and data row */
+}
+.custom-table .email, .custom-table .fullname {
+max-width: 200px; /* Adjust maximum width as needed */
+font-size: 12px; /* Decrease font size if necessary */
+padding: 8px; /* Reduce padding to maximize space */
+word-wrap: break-word; /* Allow text to break into multiple lines */
+overflow-wrap: break-word; /* Alternative to word-wrap */
+text-overflow: ellipsis; /* Truncate text with ellipsis if it overflows */
+}

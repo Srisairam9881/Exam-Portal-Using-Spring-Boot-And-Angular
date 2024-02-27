@@ -1,0 +1,34 @@
+<mat-card>
+<mat-table [dataSource]="users" class="custom-table">
+<ng-container matColumnDef="username">
+<mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+<mat-cell *matCellDef="let user" [matTooltip]="user.username">{{ user.username }}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="email">
+<mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+<mat-cell *matCellDef="let user" [matTooltip]="user.email">{{ user.email }}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="fullName">
+<mat-header-cell *matHeaderCellDef> Full Name </mat-header-cell>
+<mat-cell *matCellDef="let user" [matTooltip]="user.firstName + ' ' + user.lastName">{{ user.firstName + ' ' + user.lastName }}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="phoneNo">
+<mat-header-cell *matHeaderCellDef> Phone Number </mat-header-cell>
+<mat-cell *matCellDef="let user" [matTooltip]="user.phoneNo">{{ user.phoneNo }}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="profile">
+<mat-header-cell *matHeaderCellDef> Profile Picture </mat-header-cell>
+<mat-cell *matCellDef="let user" [matTooltip]="user.profile">{{ user.profile }}</mat-cell>
+</ng-container>
+<ng-container matColumnDef="role">
+<mat-header-cell *matHeaderCellDef> Role </mat-header-cell>
+<mat-cell *matCellDef="let user" [matTooltip]="'ADMIN'">ADMIN</mat-cell>
+</ng-container>
+<ng-container matColumnDef="enabled">
+<mat-header-cell *matHeaderCellDef> Active </mat-header-cell>
+<mat-cell *matCellDef="let user" [matTooltip]="user.enabled ? 'Yes' : 'No'">{{ user.enabled ? 'Yes' : 'No' }}</mat-cell>
+</ng-container>
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let user; columns: displayedColumns;"></mat-row>
+</mat-table>
+</mat-card>

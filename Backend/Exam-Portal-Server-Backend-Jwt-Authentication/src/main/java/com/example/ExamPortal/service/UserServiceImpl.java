@@ -1,17 +1,9 @@
 package com.example.ExamPortal.service;
-
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Service;
-
 import com.example.ExamPortal.helper.UserFoundException;
 import com.example.ExamPortal.models.User;
 import com.example.ExamPortal.models.UserRole;
@@ -63,18 +55,38 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		this.userRepository.deleteById(userId);
 	}
-
-	  @Override
-	    public Set<User> getAllUsers() {
-	        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-	        if (authentication != null && authentication.getAuthorities().stream()
-	                .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"))) {
-	            return new HashSet<>(userRepository.findAll());
-	        } else {
-	            throw new AccessDeniedException("Access is denied");
+//	@Override
+//	@Secured("ADMIN")
+//	public Set<User> getAllUsers() {
+//	return new LinkedHashSet<User>(userRepository.findAll());
+//	}
+	@Override
+	@Secured("ADMIN")
+	public Set<User> getAllUsers() {
+	    Set<User> users = new LinkedHashSet<>(userRepository.findAll());
+	    Set<User> regularUsers = new HashSet<>();
+	    for (User user : users) {
+	        boolean isAdmin = user.getUserRoles().stream()
+	                .anyMatch(userRole -> userRole.getRole().getRoleName().equals("ADMIN"));
+	        if (!isAdmin) {
+	            regularUsers.add(user);
 	        }
 	    }
-
-	
+	    return regularUsers;
+	}
+	@Override
+	@Secured("ADMIN")
+	public Set<User> getAllAdmins() {
+	    Set<User> users = new LinkedHashSet<>(userRepository.findAll());
+	    Set<User> admins = new HashSet<>();
+	    for (User user : users) {
+	        boolean isAdmin = user.getUserRoles().stream()
+	                .anyMatch(userRole -> userRole.getRole().getRoleName().equals("ADMIN"));
+	        if (isAdmin) {
+	            admins.add(user);
+	        }
+	    }
+	    return admins;
+	}
 
 }

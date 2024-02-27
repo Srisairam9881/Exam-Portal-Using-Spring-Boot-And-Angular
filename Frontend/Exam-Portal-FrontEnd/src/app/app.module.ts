@@ -11,7 +11,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
-import { authInterceptorProviders } from './Services/auth.interceptor';
+import { authInterceptorProviders } from './Services/Auth and helper/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -34,6 +34,11 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { PrequizComponent } from './pages/user/prequiz/prequiz.component';
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
+import { AllAdminsComponent } from './pages/admin/all-admins/all-admins.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +62,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     UserSidebar,
     LoadQuizComponent,
     PrequizComponent,
-    StartQuizComponent
+    StartQuizComponent,
+    AllUsersComponent,
+    AllAdminsComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +77,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatIconModule,
     MatButtonModule,
     MatSlideToggleModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatTooltipModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

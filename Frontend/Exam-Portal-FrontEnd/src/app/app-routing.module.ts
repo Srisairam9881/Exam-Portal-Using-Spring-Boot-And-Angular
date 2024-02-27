@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { AllAdminsComponent } from './pages/admin/all-admins/all-admins.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -17,8 +19,8 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { PrequizComponent } from './pages/user/prequiz/prequiz.component';
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
-import { AdminGuard } from './Services/admin.guard';
-import { UserGuard } from './Services/user.guard';
+import { AdminGuard } from './Services/Admin Gurd/admin.guard';
+import { UserGuard } from './Services/User Gurd/user.guard';
 
 const routes: Routes = [
 {path:'signup',component:SignupComponent,pathMatch:'full'},
@@ -37,6 +39,8 @@ children:[
 {path:'view-questions/:qid/:title',component:ViewQuizQuestionsComponent},
 {path:'add-question/:qid/:title',component:AddQuestionsComponent},
 {path:'',component:WelcomeComponent},
+{path:'all-users',component:AllUsersComponent},
+{path:'all-admins',component:AllAdminsComponent},
 ],},
 
 //user routerLinks

@@ -1,9 +1,13 @@
 package com.example.ExamPortal.controller;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,6 +53,18 @@ public class UserController {
 	 
 	 return this.userService.createUser(user, roles);
 	}
+	@GetMapping("/users/all")
+	@Secured("ADMIN")
+	public ResponseEntity<?> getAllUsers()
+	{
+	return ResponseEntity.ok(this.userService.getAllUsers());
+	}
+	@GetMapping("/admins/all")
+	@Secured("ADMIN")
+	public ResponseEntity<?> getAllAdmins()
+	{
+	return ResponseEntity.ok(this.userService.getAllAdmins());
+	}
 	
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username)
@@ -63,7 +79,7 @@ public class UserController {
 	this.userService.deleteUser(userId);
 	}
 	
-	//update api
+	
 
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CategoryServiceService } from 'src/app/Services/category-service.service';
-import { QuizServicesService } from 'src/app/Services/quiz-services.service';
+import { CategoryServiceService } from 'src/app/Services/Category Services/category-service.service';
+import { QuizServicesService } from 'src/app/Services/Quiz Services/quiz-services.service';
 import Swal from 'sweetalert2';
 
 @Component({
