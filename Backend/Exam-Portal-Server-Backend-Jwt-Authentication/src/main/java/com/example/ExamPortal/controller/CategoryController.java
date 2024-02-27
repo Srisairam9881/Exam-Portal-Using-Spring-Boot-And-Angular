@@ -1,6 +1,9 @@
 package com.example.ExamPortal.controller;
 
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +25,6 @@ public class CategoryController {
 	
 	@Autowired
 	private CategoryService categoryService;
-	
 	//add category
 	@PostMapping("/")
 	public  ResponseEntity<Category> addCategory(@RequestBody Category category)
@@ -30,21 +32,24 @@ public class CategoryController {
 	 Category category1=this.categoryService.addCategory(category);
 	 return ResponseEntity.ok(category1);
 	}
-	
 	//get Category
 	@GetMapping("/{categoryId}")
 	public Category getCategory(@PathVariable("categoryId") Long categoryId)
 	{
 	 return this.categoryService.getCategory(categoryId);
 	}
-	
 	//get All Categories
 	@GetMapping("/")
 	public ResponseEntity<?> getCategories()
 	{
 	return ResponseEntity.ok(this.categoryService.getCategories());
 	}
-	
+	//Filter sorted way
+	@GetMapping("/sorted")
+	public ResponseEntity<Set<Category>> getSortedCategories() {
+	Set<Category> categories = categoryService.getCategoriesSortedByName();
+	return new ResponseEntity<>(categories, HttpStatus.OK);
+	}
 	//update category
 	@PutMapping("/")
 	public ResponseEntity<Category> updateCategory(@RequestBody Category category)

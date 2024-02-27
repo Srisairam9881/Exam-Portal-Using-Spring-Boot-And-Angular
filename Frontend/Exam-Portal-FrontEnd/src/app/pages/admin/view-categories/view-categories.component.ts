@@ -26,4 +26,9 @@ Swal.fire('Error!!','Error in loading data','error')
 });
 }
 
+sortCategories() {
+this.categories.sort((a, b) => {
+return a.title.localeCompare(b.title);
+});
+}
 }

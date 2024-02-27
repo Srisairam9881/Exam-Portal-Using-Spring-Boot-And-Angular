@@ -1,8 +1,15 @@
 package com.example.ExamPortal.service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.example.ExamPortal.helper.UserFoundException;
@@ -56,6 +63,18 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		this.userRepository.deleteById(userId);
 	}
+
+	  @Override
+	    public Set<User> getAllUsers() {
+	        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	        if (authentication != null && authentication.getAuthorities().stream()
+	                .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"))) {
+	            return new HashSet<>(userRepository.findAll());
+	        } else {
+	            throw new AccessDeniedException("Access is denied");
+	        }
+	    }
+
 	
 
 }

@@ -18,4 +18,8 @@ export class CategoryServiceService {
   {
   return this.http.post(`${baseUrl}/category/`,category);
   }
+  //sorted category By Tittle
+  public sortCategory(){
+    return this.http.get(`${baseUrl}/sorted/`);
+  }
 }

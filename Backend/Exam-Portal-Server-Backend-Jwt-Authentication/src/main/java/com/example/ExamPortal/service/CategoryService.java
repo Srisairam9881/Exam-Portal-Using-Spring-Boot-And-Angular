@@ -8,6 +8,7 @@ public interface CategoryService {
     Category addCategory(Category category);
     Category updateCategory(Category category);
     Set<Category> getCategories();
+    Set<Category> getCategoriesSortedByName();
     Category getCategory(Long cid);
     void  deleteCategory(Long cid);
 }
