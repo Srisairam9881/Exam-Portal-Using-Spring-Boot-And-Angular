@@ -49,4 +49,5 @@ export class QuizServicesService {
   {
   return this.http.get(`${baseUrl}/quiz/category/active/${cid}`);
   }
+
 }

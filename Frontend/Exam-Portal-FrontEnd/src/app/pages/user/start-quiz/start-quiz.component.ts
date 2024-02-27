@@ -2,6 +2,7 @@ import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionsServiceService } from 'src/app/Services/Questions Services/questions-service.service';
+import { QuizServicesService } from 'src/app/Services/Quiz Services/quiz-services.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -102,11 +103,8 @@ this.attempted++;
 }
 });
 }
-
-
 printPDF()
 {
 window.print();
 }
-
 }
