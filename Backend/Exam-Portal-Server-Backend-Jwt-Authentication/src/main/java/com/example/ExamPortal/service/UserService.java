@@ -2,6 +2,7 @@ package com.example.ExamPortal.service;
 
 import java.util.Set;
 
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.ExamPortal.models.User;
 import com.example.ExamPortal.models.UserRole;

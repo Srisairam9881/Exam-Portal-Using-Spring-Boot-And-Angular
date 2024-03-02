@@ -37,7 +37,7 @@ public class UserController {
 	@PostMapping("/")
 	public User createUser(@RequestBody User user) throws Exception
 	{
-	 user.setProfile("default.img");
+//	 user.setProfile("default.img");
 	 user.setPassword(passwordEncoder.encode(user.getPassword()));
 	 Set<UserRole>roles=new HashSet<>();
 	 
